@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using webbapp_api.Models;
 
 namespace webbapp_api
 {
@@ -28,6 +29,7 @@ namespace webbapp_api
         {
 
             services.AddControllers();
+            services.AddScoped<IRoverRepository, MockRoverRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "webbapp_api", Version = "v1" });
@@ -46,8 +48,6 @@ namespace webbapp_api
 
             app.UseHttpsRedirection();
 
-
-
             app.UseDefaultFiles(); // This will enforce index.html to load
             app.UseStaticFiles();
             app.UseRouting();
@@ -55,7 +55,9 @@ namespace webbapp_api
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
