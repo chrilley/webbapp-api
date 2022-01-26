@@ -46,8 +46,11 @@ namespace webbapp_api
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
 
+
+            app.UseDefaultFiles(); // This will enforce index.html to load
+            app.UseStaticFiles();
+            app.UseRouting();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
