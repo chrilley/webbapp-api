@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
+body {
+  background-color: black;
+}
+
+#roverMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #544994;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1em;
+}
+
+.roverButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #3e534c;
+  margin: 1em;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.roverButton:hover {
+  background-color: #14faad;
+}
+/*# sourceMappingURL=style.css.map */

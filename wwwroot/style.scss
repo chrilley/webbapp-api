@@ -1,0 +1,35 @@
+$primaryColor: rgba(84, 73, 148, 100);
+$secondaryColor: rgba(146, 137, 116, 100);
+$buttonColor: rgb(62, 83, 76);
+$buttonHover: rgb(20, 250, 173);
+$fontColor: rgba(255, 255, 255, 100);
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: $fontColor;
+}
+
+body {
+    background-color: black;
+}
+
+#roverMenu {
+    display: flex;
+    background-color: $primaryColor;
+    width: fit-content;
+    padding: 1em;
+}
+
+.roverButton {
+    display: flex;
+    background-color: $buttonColor;
+    margin: 1em;
+    padding: 1em;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $buttonHover;
+    }
+}
