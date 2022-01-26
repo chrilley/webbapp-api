@@ -19,7 +19,7 @@ namespace webbapp_api.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Rover>> GetAllAsync()
+        public IEnumerable<Rover> Get()
         {
            return _mockRoverRepository.AllRovers;
         }
