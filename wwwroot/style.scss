@@ -1,18 +1,29 @@
-$primaryColor: rgba(84, 73, 148, 100);
+$primaryColor: rgba(0, 0, 0, 0.5);
 $secondaryColor: rgba(146, 137, 116, 100);
-$buttonColor: rgb(62, 83, 76);
-$buttonHover: rgb(20, 250, 173);
+$buttonColor: rgb(8, 117, 206);
+$buttonHover: rgb(250, 104, 20);
 $fontColor: rgba(255, 255, 255, 100);
 
 * {
-    margin: 0;
-    padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: $fontColor;
 }
 
 body {
+    background-image: url("bg.jpg");
     background-color: black;
+}
+
+.content {
+    display: flex;
+    flex: 1 1 auto; 
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 700px;
 }
 
 #roverMenu {
@@ -24,12 +35,42 @@ body {
 
 .roverButton {
     display: flex;
-    background-color: $buttonColor;
+    border: 5px solid $buttonColor;
     margin: 1em;
     padding: 1em;
     cursor: pointer;
+    flex-direction: column;
+    width: 10em;
+    align-items: center;
 
     &:hover {
-        background-color: $buttonHover;
+        border: 5px solid $buttonHover;
     }
+}
+
+.roverPhoto {
+    display: flex;
+    max-width: 100px;
+}
+
+#roverPanel {
+    display: flex;
+    flex-direction: column;
+    background-color: $primaryColor;
+    padding: 1em;
+    margin: 1em;
+}
+
+img {
+    max-width: 100px;
+}
+
+.hide {
+    display: none !important; // !important attribute is neccessary else Flexbox forces display.
+}
+
+.pageFooter {
+   display: flex;
+ 
+   align-items: center;
 }

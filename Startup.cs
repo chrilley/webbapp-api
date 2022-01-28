@@ -27,7 +27,7 @@ namespace webbapp_api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors(options => options.AddPolicy("AllowEverything", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
             services.AddControllers();
             services.AddScoped<IRoverRepository, MockRoverRepository>();
             services.AddSwaggerGen(c =>
@@ -46,6 +46,8 @@ namespace webbapp_api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "webbapp_api v1"));
             }
 
+            app.UseCors("AllowEverything");
+
             app.UseHttpsRedirection();
 
             app.UseDefaultFiles(); // This will enforce index.html to load
@@ -54,11 +56,15 @@ namespace webbapp_api
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+           {
+           endpoints.MapControllers();
             });
-        }
+        /*             app.UseEndpoints(endpoints =>
+                    {
+                        endpoints.MapControllerRoute(
+                        name: "default",
+                        pattern: "{controller=Home}/{action=Index}/{id?}");
+                    }); */
     }
+}
 }

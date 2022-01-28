@@ -16,5 +16,10 @@ namespace webbapp_api.Models
             new Rover { RoverId = 2, Name = "Spirit", Description = "Spirit, också känd som MER-A (Mars Exploration Rover – A) eller MER-2, var NASAs första sond i Marsutforskningsprogrammet Mars Exploration Rover Mission. Den sköts upp med en Delta II-raket från Cape Canaveral Air Force Station, den 10 juni 2003 och landade på Mars yta, den 3 januari 2004. Den är syskonfarkost till MER-B, kallad Opportunity. Uppdraget var tänkt att pågå i 90 dagar, men tack vare att solcellerna då och då blåstes rena av starka vindar på Mars, överlevde Spirit i 2 269 dagar.", History = "", Weight = 185.0, WheelCount = 6, URL = "spirit" },
             new Rover { RoverId = 3, Name = "Opportunity", Description = "Opportunity, också känd som MER-B (Mars Exploration Rover – B) eller MER-1, med smeknamnet Oppy, var NASAs andra rymdsond i Mars-utforskningsprogrammet Mars Exploration Rover Mission. MER-B sköts iväg 8 juli 2003 och landade i området Meridiani planum på planeten Mars den 25 januari 2004. Den är tvillingfarkost till MER-A, Spirit. NASA förklarade den 13 februari 2019 uppdraget för avslutat då man inte sedan juni 2018 haft kontakt med farkosten. Detta efter att en större sandstorm dragit fram över området där den befann sig.", History = "", Weight = 185.0, WheelCount = 6, URL = "opportunity" }
         };
+
+        public Rover GetRoverById(int roverId)
+        {
+            return AllRovers.FirstOrDefault(p => p.RoverId == roverId);
+        }
     }
 }
