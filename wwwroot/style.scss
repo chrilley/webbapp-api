@@ -1,7 +1,9 @@
 $primaryColor: rgba(0, 0, 0, 0.5);
 $secondaryColor: rgba(146, 137, 116, 100);
 $buttonColor: rgb(8, 117, 206);
+$buttonBg: rgba(8, 117, 206, 0.2);
 $buttonHover: rgb(250, 104, 20);
+$buttonHoverBg: rgba(250, 104, 20, 0.2);
 $fontColor: rgba(255, 255, 255, 100);
 
 * {
@@ -61,7 +63,8 @@ body {
 
 .roverButton {
     display: flex;
-    border: 5px solid $buttonColor;
+    border: 2px solid $buttonColor;
+    background-color: $buttonBg;
     margin: 1em;
     padding: 1em;
     cursor: pointer;
@@ -70,7 +73,8 @@ body {
     align-items: center;
 
     &:hover {
-        border: 5px solid $buttonHover;
+        border: 2px solid $buttonHover;
+        background-color: $buttonHoverBg;
     }
 }
 
@@ -99,6 +103,10 @@ body {
     display: flex;
     flex: 1;
 
+}
+
+a{
+    padding: 0.5em;
 }
 
 .pageFooter {

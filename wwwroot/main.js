@@ -80,16 +80,20 @@ async function showInfo(rover) {
 }
 
 async function showRoverGallery(rover) {
-    const roverData = await getData(url + rover.url + '/photos?sol=1000&page=0&api_key=' + key);
+    const roverData = await getData(url + rover.url + '/photos?sol=100&page=0&api_key=' + key);
 
     for (let index = 0; index < roverData.photos.length; index++) {
         const element = roverData.photos[index];
+
+        const link = document.createElement('a');
+        link.href = element.img_src;
+        roverGallery.appendChild(link);
 
         const roverThumb = document.createElement('img');
         roverThumb.alt = 'Photo';
         roverThumb.src = element.img_src;
         roverThumb.width = 100;
-        roverGallery.appendChild(roverThumb);
+        link.appendChild(roverThumb);
     }
 }
 

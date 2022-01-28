@@ -83,7 +83,8 @@ body img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 5px solid #0875ce;
+  border: 2px solid #0875ce;
+  background-color: rgba(8, 117, 206, 0.2);
   margin: 1em;
   padding: 1em;
   cursor: pointer;
@@ -98,7 +99,8 @@ body img {
 }
 
 .roverButton:hover {
-  border: 5px solid #fa6814;
+  border: 2px solid #fa6814;
+  background-color: rgba(250, 104, 20, 0.2);
 }
 
 .roverPhoto {
@@ -135,6 +137,10 @@ body img {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+a {
+  padding: 0.5em;
 }
 
 .pageFooter {
