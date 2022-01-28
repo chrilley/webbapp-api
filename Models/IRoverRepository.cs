@@ -10,5 +10,6 @@ namespace webbapp_api.Models
     public interface IRoverRepository
     {
         IEnumerable<Rover> AllRovers { get; }
+        Rover GetRoverById(int roverId);
     }
 }
