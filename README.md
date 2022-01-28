@@ -4,7 +4,7 @@ A course assignment about developing a web based API.
 ## Assignment Setup
 > My small API exists as the main MVC project
 > 
-> Client Interface exists within the wwwwroot folder as static files emulating an external site calling my API.
+> Client Interface exists within the wwwroot folder as static files emulating an external site calling my API.
 >
 > And NASA graciously provides their API at their own expense.
 
