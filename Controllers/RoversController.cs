@@ -22,6 +22,7 @@ namespace webbapp_api.Controllers
             _mapper = mapper;
         }
 
+        // Endpoint 1: Get all Rovers
         [HttpGet]
         public IEnumerable<RoverResource> Get()
         {
@@ -30,14 +31,15 @@ namespace webbapp_api.Controllers
            return resources;
         }
 
+        // Endpoint 2: Get Rover By Id, requires a parameter.
         [HttpGet("{id}")]
         public IEnumerable<RoverResource> Get(int id){
             var rover = _mockRoverRepository.GetRoverById(id);
             
-            var list = new List<Rover>();
+            var list = new List<Rover>();                                                       // There *has* to be a better way to do this. 
             list.Add(rover);
 
-            var resource =_mapper.Map<IEnumerable<Rover>, IEnumerable<RoverResource>>(list);
+            var resource =_mapper.Map<IEnumerable<Rover>, IEnumerable<RoverResource>>(list);    // Basically, AutoMapper wants a list so I give it one. But I really want to send it just 1 object. What do? :|
             return resource;
         }
     }
