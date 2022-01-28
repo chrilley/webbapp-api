@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using webbapp_api.Models;
+using AutoMapper;
 
 namespace webbapp_api
 {
@@ -34,6 +35,7 @@ namespace webbapp_api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "webbapp_api", Version = "v1" });
             });
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

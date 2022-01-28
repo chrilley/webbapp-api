@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using webbapp_api.Models;
+using AutoMapper;
+using webbapp_api.Resources;
 
 namespace webbapp_api.Controllers
 {
@@ -13,15 +15,19 @@ namespace webbapp_api.Controllers
     public class RoversController : ControllerBase
     {
         private readonly IRoverRepository _mockRoverRepository;
-        public RoversController(IRoverRepository mockRoverRepository)
+        private readonly IMapper _mapper;
+        public RoversController(IRoverRepository mockRoverRepository, IMapper mapper)
         {
             _mockRoverRepository = mockRoverRepository;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public IEnumerable<Rover> Get()
+        public IEnumerable<RoverResource> Get()
         {
-           return _mockRoverRepository.AllRovers;
+           var rovers = _mockRoverRepository.AllRovers;
+           var resources = _mapper.Map<IEnumerable<Rover>, IEnumerable<RoverResource>>(rovers);
+           return resources;
         }
 
         [HttpGet("{id}")]
