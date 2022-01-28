@@ -24,7 +24,7 @@ async function createMenu() {
     const randomButton = document.createElement('div');
     randomButton.id = 'randomRover';
     randomButton.classList.add('roverButton');
-    randomButton.textContent = 'Välj en slumpmässig strövare!'
+    randomButton.textContent = 'Välj åt mig!'
 
     randomButton.addEventListener('click', async function (event) {
         event.stopPropagation();
@@ -32,7 +32,7 @@ async function createMenu() {
         roverPanel.classList.remove('hide');
 
         const randomNum = 1 + Math.floor(Math.random() * 3);
-        const randomRover = await getData('api/rovers/' + randomNum); // I realize I can just grab from 'rovers' array but this is to demo the second endpoint of my own API; getRoverById()
+        const randomRover = await getData('api/rovers/' + randomNum); // I realize I can just read from the 'rovers' array directly but I need to demo the second endpoint of my own API.
 
         showInfo(randomRover[0]);
         showRoverGallery(randomRover[0]);
