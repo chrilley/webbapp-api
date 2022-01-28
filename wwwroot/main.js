@@ -15,11 +15,6 @@ async function getData(file) {
     return data;
 }
 
-async function startup() {
-    const rovers = await getData('/api/rovers');
-    console.log(rovers);
-}
-
 async function createMenu() {
     const rovers = await getData('api/rovers');
     for (const rover of rovers) {
@@ -38,7 +33,6 @@ async function createMenu() {
 
         const randomNum = 1 + Math.floor(Math.random() * 3);
         const randomRover = await getData('api/rovers/' + randomNum); // I realize I can just grab from 'rovers' array but this is to demo the second endpoint of my own API; getRoverById()
-        console.log(randomRover);
 
         showInfo(randomRover);
         showRoverGallery(randomRover);
@@ -105,7 +99,6 @@ function removeChildren(parent) {
     }
 }
 
-startup();
 createMenu();
 
 document.addEventListener('click', event => {
