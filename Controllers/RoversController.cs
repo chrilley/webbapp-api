@@ -23,5 +23,10 @@ namespace webbapp_api.Controllers
         {
            return _mockRoverRepository.AllRovers;
         }
+
+        [HttpGet("{id}")]
+        public Rover Get(int id){
+            return _mockRoverRepository.GetRoverById(id);
+        }
     }
 }

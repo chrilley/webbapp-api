@@ -50,10 +50,21 @@ function createRoverButton(rover) {
 async function showInfo(rover) {
     const roverName = document.createElement('h3');
     roverName.textContent = rover.name;
+    roverName.classList.add('infoItem');
     roverInfo.appendChild(roverName);
+
+    const roverWeight = document.createElement('h5');
+    roverWeight.textContent = "Vikt: " +rover.weight + " kg";
+    roverInfo.appendChild(roverWeight);
+
+    const roverWheels = document.createElement('h5');
+    roverWheels.classList.add('infoItem');
+    roverWheels.textContent = "Antal hjul: " + rover.wheelCount + " st.";
+    roverInfo.appendChild(roverWheels);
 
     const roverDescription = document.createElement('h5');
     roverDescription.textContent = rover.description;
+    roverDescription.classList.add('infoItem');
     roverInfo.appendChild(roverDescription);
 }
 
