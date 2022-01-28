@@ -34,8 +34,8 @@ async function createMenu() {
         const randomNum = 1 + Math.floor(Math.random() * 3);
         const randomRover = await getData('api/rovers/' + randomNum); // I realize I can just grab from 'rovers' array but this is to demo the second endpoint of my own API; getRoverById()
 
-        showInfo(randomRover);
-        showRoverGallery(randomRover);
+        showInfo(randomRover[0]);
+        showRoverGallery(randomRover[0]);
     })
     roverMenu.appendChild(randomButton);
 }
