@@ -31,8 +31,14 @@ namespace webbapp_api.Controllers
         }
 
         [HttpGet("{id}")]
-        public Rover Get(int id){
-            return _mockRoverRepository.GetRoverById(id);
+        public IEnumerable<RoverResource> Get(int id){
+            var rover = _mockRoverRepository.GetRoverById(id);
+            
+            var list = new List<Rover>();
+            list.Add(rover);
+
+            var resource =_mapper.Map<IEnumerable<Rover>, IEnumerable<RoverResource>>(list);
+            return resource;
         }
     }
 }
