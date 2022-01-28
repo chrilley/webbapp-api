@@ -27,6 +27,25 @@ async function createMenu() {
     for (const rover of rovers) {
         createRoverButton(rover);
     }
+
+    const randomButton = document.createElement('div');
+    randomButton.id = 'randomRover';
+    randomButton.classList.add('roverButton');
+    randomButton.textContent = 'Välj en slumpmässig strövare!'
+
+    randomButton.addEventListener('click', async function (event) {
+        event.stopPropagation();
+        roverMenu.classList.add('hide');
+        roverPanel.classList.remove('hide');
+
+        const randomNum = 1 + Math.floor(Math.random() * 3);
+        const randomRover = await getData('api/rovers/' + randomNum); // I realize I can just grab from 'rovers' array but this is to demo the second endpoint of my own API; getRoverById()
+        console.log(randomRover);
+
+        showInfo(randomRover);
+        showRoverGallery(randomRover);
+    })
+    roverMenu.appendChild(randomButton);
 }
 
 function createRoverButton(rover) {
