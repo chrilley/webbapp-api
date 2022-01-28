@@ -1,13 +1,19 @@
 # webbapp-api
-A course assignment about developing a web based API system.
+A course assignment about developing a web based API.
 
-## Instruktioner
+## Assignment Setup
+> My small API exists as the main MVC project
+> 
+> Client Interface exists within the wwwwroot folder as static files emulating an external site calling my API.
+>
+> And NASA graciously provides their API at their own expense.
 
-> **1) Learn Swedish.**
+## Instructions
+
 >
-> **2) Klona ned repot.**
+> **1) Clone the repo.**
 >
-> **3) Navigera till det nedladdade repot "webbapp-api" med din favorit-terminal.**
+> **2) Navigate to the downloaded repo "webbapp-api" using you favorite terminal.**
 >
-> **4) Skriv "dotnet run" inuti huvudmappen och surfa in på addressen som den virtuella servern startar upp på.**
+> **3) Type "dotnet run" while within the main folder then surf to the address the virtual server listens to.**
 >
